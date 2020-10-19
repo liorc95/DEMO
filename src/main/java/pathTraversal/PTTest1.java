@@ -1,21 +1,23 @@
 package pathTraversal;
 
-import java.util.UUID;
 import java.io.File;
 
+// Base Directory: /users/ws/profiles/
+// Unsafe filename: ../../../etc/passwd
+// Canonical unsafe-file: /users/ws/profiles/../../../etc/passwd ----->>>  /etc/passwd ---->>>> Vulnerability!
+
 public class PTTest1 {
-    private final String BASE_DIRECTORY = "src";
+    private final String BASE_DIRECTORY = "/users/ws/profiles/";
     public void test(String filename) {
         try {
-            File dictionaryFile = new File(BASE_DIRECTORY + filename);
-            delFile(dictionaryFile);
+            File myFile = new File(BASE_DIRECTORY + filename);
+            deleteFile(myFile);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        System.out.print("sdfsf");
     }
 
-    private void delFile(File f) {
+    private void deleteFile(File f) {
         f.delete();
     }
 }
