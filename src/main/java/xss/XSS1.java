@@ -19,7 +19,7 @@ public class XSS1 {
         String name = request.getParameter("name");
         unsafe(name);
     }
-    private void main(String name) {
+    private void unsafe(String name) {
         try {
             response.setContentType("text/html");
             PrintWriter out = response.getWriter();
