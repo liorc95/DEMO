@@ -5,8 +5,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.UUID;
 
-public class SQLITest1 {
-    public void main(String ip) {
+public class SQLI {
+    public void sqlTest1(String ip) {
         try {
             Statement statement = getJDBCConnection().createStatement();
             String uuid = UUID.randomUUID().toString();
