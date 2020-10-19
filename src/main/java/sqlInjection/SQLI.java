@@ -1,4 +1,4 @@
-package sqlI;
+package sqlInjection;
 
 import java.sql.Connection;
 import java.sql.SQLException;
