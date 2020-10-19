@@ -10,7 +10,7 @@ import org.hibernate.service.ServiceRegistry;
 
 public class HQL {
 
-    public void hqlTest1(String id) {
+    public void main(String id) {
         SessionFactory sessionFactory = getSessionFactory();
         Session session = sessionFactory.openSession();
         session.getTransaction().begin();
