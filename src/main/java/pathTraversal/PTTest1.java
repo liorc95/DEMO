@@ -11,13 +11,10 @@ public class PTTest1 {
     public void test(String filename) {
         try {
             File myFile = new File(BASE_DIRECTORY + filename);
-            deleteFile(myFile);
+            myFile.delete();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
 
-    private void deleteFile(File f) {
-        f.delete();
-    }
 }
