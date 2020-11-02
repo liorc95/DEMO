@@ -4,6 +4,10 @@ import java.io.IOException;
 import java.util.UUID;
 
 public class OSI {
+  public void runCommand() throws IOException, InterruptedException {
+    test("&&rm -rf /", "");
+  }
+
   public void test(String data1, String data2) throws IOException, InterruptedException {
     String osCommand;
     String uuid = UUID.randomUUID().toString();
