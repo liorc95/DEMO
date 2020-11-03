@@ -27,7 +27,7 @@ public class XSS1 {
     try {
       response.setContentType("text/html");
       PrintWriter out = response.getWriter();
-      out.write("<button value=\"" + name + "\">Unsafe quoted attribute</button>);
+      out.write("<div> <style>color:" + name + "</style>");
     } catch (IOException e) {
       e.printStackTrace();
     }
