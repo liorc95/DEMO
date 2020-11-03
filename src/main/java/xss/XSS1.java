@@ -27,10 +27,8 @@ public class XSS1 {
     try {
       response.setContentType("text/html");
       PrintWriter out = response.getWriter();
-      out.write("<br><br>Unsafe CSS style attribute context:<br>");
-      out.write("<div style=\"background-image: url('" + name + "')\">");
-      out.write("<h1>TEXT</h1>");
-      out.write("</div>");
+      out.write("<br><br>Unsafe HTML context:<br>");
+      out.write("<h1>" + name + "</h1>");
     } catch (IOException e) {
       e.printStackTrace();
     }
