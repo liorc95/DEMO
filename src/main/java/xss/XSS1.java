@@ -27,7 +27,7 @@ public class XSS1 {
     try {
       response.setContentType("text/html");
       PrintWriter out = response.getWriter();
-      out.write("<div><style>" + name + "</style></div>");
+      out.write("<div> <style>" + name + "</style> </div>");
     } catch (IOException e) {
       e.printStackTrace();
     }
