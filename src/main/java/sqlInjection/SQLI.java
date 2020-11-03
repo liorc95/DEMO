@@ -10,6 +10,7 @@ public class SQLI {
     try {
       String serverName = "NAME";
       String uuid = UUID.randomUUID().toString();
+      ip = ip + "I Am Const";
       Statement statement = getJDBCConnection().createStatement();
       String sql = "INSERT INTO banned_ip(id, ip, serverName, port) VALUE('" + uuid + "','" + ip + "','"+serverName+"','"+port+"')";
       statement.execute(sql);
