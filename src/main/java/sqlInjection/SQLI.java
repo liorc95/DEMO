@@ -6,11 +6,12 @@ import java.sql.Statement;
 import java.util.UUID;
 
 public class SQLI {
-  public void sqlTest1(String ip) {
+  public void sqlTest1(String ip, String port) {
     try {
+      String serverName = "NAME";
       String uuid = UUID.randomUUID().toString();
       Statement statement = getJDBCConnection().createStatement();
-      String sql = "INSERT INTO banned_ip(id, ip) VALUE('" + uuid + "','" + ip + "')";
+      String sql = "INSERT INTO banned_ip(id, ip) VALUE('" + uuid + "','" + ip + "','"+serverName"','"+port"')";
       statement.execute(sql);
     } catch (SQLException exception) {
       exception.printStackTrace();
