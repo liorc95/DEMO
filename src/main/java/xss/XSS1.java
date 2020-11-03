@@ -28,9 +28,8 @@ public class XSS1 {
       response.setContentType("text/html");
       PrintWriter out = response.getWriter();
       out.write("<br><br>Unsafe CSS style attribute context:<br>");
-      out.write("<div>" + name + "");
+      out.write("<div>" + name + "</div>");
       out.write("<h1>TEXT</h1>");
-      out.write("</div>");
     } catch (IOException e) {
       e.printStackTrace();
     }
