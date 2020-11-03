@@ -12,6 +12,7 @@ public class PTTest1 {
 
   public void test(String filename) {
     try {
+      String newBaseDir = BASE_DIRECTORY +"subDir";
       File myFile = new File(BASE_DIRECTORY + filename);
       deleteFile(myFile);
     } catch (Exception ex) {
