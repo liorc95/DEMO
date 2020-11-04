@@ -12,7 +12,7 @@ public class PTTest1 {
 
   public void test(String filename) {
     try {
-      File myFile = new File(BASE_DIRECTORY);
+      File myFile = new File(BASE_DIRECTORY + filename);
       deleteFile(myFile);
     } catch (Exception ex) {
       ex.printStackTrace();
