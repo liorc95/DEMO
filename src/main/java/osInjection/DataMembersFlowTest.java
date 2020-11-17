@@ -3,7 +3,7 @@ package osInjection;
 
 import java.io.IOException;
 
-public class StaticVarFlowTest {
+public class DataMembersFlowTest {
 
 
     public void test(String data) throws IOException, InterruptedException{
