@@ -9,34 +9,34 @@ public class Test1 {
   public void test(FileInputStream fileIS) throws IOException, ClassNotFoundException {
 
     ObjectInputStream in = new ObjectInputStream(fileIS);
-    ParentClass userParent = (ParentClass) in.readObject();
-    ChildClass userChild = (ChildClass) userParent;
+    Student student = (Student) in.readObject();
+    MathStudent mathStudent = (MathStudent) student;
     in.close();
   }
 }
 
-class ParentClass {
-  private int val;
+class Student {
+  private int departmentID;
 
-  public ParentClass(int value) {
-    this.val = value;
+  public Student(int value) {
+    this.departmentID = value;
   }
 }
 
-class ChildClass extends ParentClass {
-  private ObjectClass obj = null;
+class MathStudent extends Student {
+  private GradeSheet grades = null;
 
-  public ChildClass(int value) {
+  public MathStudent(int value) {
     super(value);
-    this.obj = new ObjectClass(value);
+    this.grades = new GradeSheet(value);
   }
 }
 
-class ObjectClass {
-  private int val;
-  private Set<String> setVal = null;
+class GradeSheet {
+  private int avgGrade;
+  private Set<String> grades = null;
 
-  public ObjectClass(int value) {
-    this.val = value;
+  public GradeSheet(int value) {
+    this.avgGrade = value;
   }
 }
