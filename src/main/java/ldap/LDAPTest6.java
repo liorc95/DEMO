@@ -1,4 +1,5 @@
-package ldap;
+package ldap;import org.owasp.encoder.Encode;
+
 
 import javax.naming.NamingEnumeration;
 import javax.naming.NamingException;
@@ -14,9 +15,9 @@ public class LDAPTest6 {
     String user;
     String pass = request.getParameter("pass");
     user = request.getParameter("user");
-    String filter = "(&(uid=" + user + ")(userPassword=" + pass + "))";
+    String filter = "(&(uid=" + "{1}" + ")(userPassword=" + "{0}" + "))";
 
-    NamingEnumeration<SearchResult> results = ctx.search("ou=system", filter, new SearchControls());
+    NamingEnumeration<SearchResult> results = ctx.search("ou=system", filter, new String[] { pass, user }, new SearchControls());
     return results.hasMore();
   }
 }
