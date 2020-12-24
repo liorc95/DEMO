@@ -1,4 +1,5 @@
-package xss;
+package xss;import org.owasp.encoder.Encode;
+
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -20,7 +21,7 @@ public class XSS1 {
     this.request = request;
     this.response = response;
     String name = request.getParameter("name");
-    unsafe(name);
+    unsafe(Encode.forCssString(name));
   }
 
   private void unsafe(String name) {
